@@ -34,7 +34,15 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
      */
     public function testGet()
     {
-        $this->assertInstanceOf('\Slim\Http\Environment', $this->container->get('environment'));
+        $this->assertInstanceOf('\Slim\Interfaces\Http\EnvironmentInterface', $this->container->get('environment'));
+    }
+
+    /**
+     * Test container has settings
+     */
+    public function testGetSettings()
+    {
+        $this->assertInstanceOf('\Geekish\Slimbox\Settings', $this->container->get('settings'));
     }
 
     /**
@@ -78,11 +86,19 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetRouter()
     {
-        $this->assertInstanceOf('\Slim\Router', $this->container['router']);
+        $this->assertInstanceOf('\Slim\Interfaces\RouterInterface', $this->container['router']);
     }
 
     /**
-     * Test container has error handler
+     * Test container has foundHandler
+     */
+    public function testGetFoundHandler()
+    {
+        $this->assertInstanceOf('\Slim\Interfaces\InvocationStrategyInterface', $this->container['foundHandler']);
+    }
+
+    /**
+     * Test container has errorHandler
      */
     public function testGetErrorHandler()
     {
@@ -90,11 +106,27 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test container has error handler
+     * Test container has phpErrorHandler
+     */
+    public function testGetPhpErrorHandler()
+    {
+        $this->assertInstanceOf('\Slim\Handlers\PhpError', $this->container['phpErrorHandler']);
+    }
+
+    /**
+     * Test container has notAllowedHandler
      */
     public function testGetNotAllowedHandler()
     {
         $this->assertInstanceOf('\Slim\Handlers\NotAllowed', $this->container['notAllowedHandler']);
+    }
+
+    /**
+     * Test container has callableResolver
+     */
+    public function testGetCallableResolver()
+    {
+        $this->assertInstanceOf('\Slim\Interfaces\CallableResolverInterface', $this->container['callableResolver']);
     }
 
     /**
