@@ -3,6 +3,7 @@
 namespace Geekish\Slimbox;
 
 use ArrayAccess;
+use BadMethodCallException;
 use mindplay\unbox\Configuration;
 use mindplay\unbox\Container as Unbox;
 use mindplay\unbox\ContainerException;
@@ -42,7 +43,7 @@ final class Container extends Unbox implements ArrayAccess
      */
     public function offsetSet($key, $value)
     {
-        throw new ContainerException(sprintf(
+        throw new BadMethodCallException(sprintf(
             "%s does not support ArrayAccess::offsetSet",
             __CLASS__
         ));
@@ -53,7 +54,7 @@ final class Container extends Unbox implements ArrayAccess
      */
     public function offsetUnset($key)
     {
-        throw new ContainerException(sprintf(
+        throw new BadMethodCallException(sprintf(
             "%s does not support ArrayAccess::offsetUnset",
             __CLASS__
         ));
