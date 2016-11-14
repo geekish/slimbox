@@ -58,7 +58,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
     /**
      * Test `set()` throws exception
      *
-     * @expectedException \mindplay\unbox\ContainerException
+     * @expectedException \BadMethodCallException
      */
     public function testCannotSetOnContainer()
     {
