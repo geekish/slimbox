@@ -7,6 +7,7 @@ use mindplay\unbox\ContainerFactory as UnboxFactory;
 use mindplay\unbox\ProviderInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\CallableResolver;
 use Slim\Handlers\PhpError;
 use Slim\Handlers\Error;
 use Slim\Handlers\NotFound;
