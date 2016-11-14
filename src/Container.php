@@ -58,4 +58,20 @@ final class Container extends Unbox implements ArrayAccess
             __CLASS__
         ));
     }
+
+    /********************************************************************************
+     * Slim Container "compatibility"
+     *******************************************************************************/
+
+    /**
+     * @inheritDoc
+     */
+    public function set($key, $value)
+    {
+        throw new BadMethodCallException(sprintf(
+            "%s does not support set() method, you must use %s to configure and create the container",
+            __CLASS__,
+            ContainerFactory::class
+        ));
+    }
 }

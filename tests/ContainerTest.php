@@ -48,6 +48,16 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test `set()` throws exception
+     *
+     * @expectedException \mindplay\unbox\ContainerException
+     */
+    public function testCannotSetOnContainer()
+    {
+        $this->container->set('foo', 'bar');
+    }
+
+    /**
      * Test container has request
      */
     public function testGetRequest()
