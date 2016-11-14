@@ -60,6 +60,16 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \BadMethodCallException
      */
+    public function testCannotArrayAccessSetOnContainer()
+    {
+        $this->container['foo'] = "bar";
+    }
+
+    /**
+     * Test `set()` throws exception
+     *
+     * @expectedException \BadMethodCallException
+     */
     public function testCannotSetOnContainer()
     {
         $this->container->set('foo', 'bar');
