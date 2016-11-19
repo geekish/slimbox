@@ -7,7 +7,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## 0.2.0 - 2016-11-13
 
 ### Added
-- "Dummy" set() method on `Slim\Container` that throws a more helpful exception
+- "Dummy" set() method on `Geekish\Slimbox\Container` that throws a more helpful exception
 - More comprehensive unit tests
 
 ### Deprecated
