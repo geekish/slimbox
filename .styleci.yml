@@ -1,0 +1,9 @@
+preset: psr2
+
+enabled:
+  - short_array_syntax
+  - unalign_double_arrow
+
+disabled:
+  - align_double_arrow
+  - long_array_syntax
