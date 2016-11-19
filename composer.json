@@ -22,6 +22,7 @@
         "slim/slim": "^3.5"
     },
     "require-dev": {
+        "squizlabs/php_codesniffer": "^2.7",
         "phpunit/phpunit" : "^5.0"
     },
     "autoload": {
@@ -35,12 +36,9 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
+        "checkcs": "./vendor/bin/phpcs",
+        "fixcs": "./vendor/bin/phpcbf",
+        "test": "./vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true
