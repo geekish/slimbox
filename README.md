@@ -68,9 +68,9 @@ If you discover any security related issues, please email hannahwarmbier@gmail.c
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: //img.shields.io/packagist/v/geekish/slimbox.svg?style=flat-square
-[ico-license]: //img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-downloads]: //img.shields.io/packagist/dt/geekish/slimbox.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/geekish/slimbox.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/geekish/slimbox.svg?style=flat-square
 
 [link-slim]: //github.com/slimphp/Slim
 [link-unbox]: //github.com/mindplay-dk/unbox
