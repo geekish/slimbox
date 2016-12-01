@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
+<?xml version="1.0" encoding="UTF-8"?><!-- -*- grammar-ext: .xml -*- -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.7/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
          backupGlobals="false"
          backupStaticAttributes="false"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutChangesToGlobalState="true"
+         beStrictAboutOutputDuringTests="true"
          colors="true"
          verbose="true"
          convertErrorsToExceptions="true"
@@ -10,7 +15,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="geekish Test Suite">
+        <testsuite name="Slimbox Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
