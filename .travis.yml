@@ -23,10 +23,10 @@ before_script:
 
 script:
   - vendor/bin/phpcs
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  - vendor/bin/phpunit --coverage-text --coverage-clover=clover.xml
 
 after_script:
-  - travis_retry php vendor/bin/coveralls
+  - travis_retry php vendor/bin/coveralls --coverage_clover=clover.xml
 
 notifications:
   email: false
