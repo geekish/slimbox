@@ -8,8 +8,7 @@
  */
 namespace Geekish\Slimbox;
 
-use Interop\Container\ContainerInterface;
-use Slim\Router;
+use mindplay\unbox\ContainerFactory as UnboxFactory;
 
 /**
  * ContainerTest
@@ -27,6 +26,18 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $containerFactory = new ContainerFactory;
         $containerFactory->add(new DefaultServicesProvider);
         $this->container = $containerFactory->createContainer();
+    }
+
+    /**
+     * Test using UnboxFactory
+     */
+    public function testUnboxFactory()
+    {
+        $unboxFactory = new UnboxFactory;
+        $unboxFactory->add(new DefaultServicesProvider);
+        $container = $unboxFactory->createContainer();
+
+        $this->assertInstanceOf('\mindplay\unbox\Container', $container);
     }
 
     /**

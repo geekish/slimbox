@@ -19,9 +19,9 @@ $ composer require geekish/slimbox
 
 ## Usage
 
-This package contains an extended (final) Container and ContainerFactory from [Unbox][link-unbox]. Usage is almost exactly the same, except the extended Container _partially_ implements ArrayAccess. What this means is that you may use array notation to _access_ services in the Container; however, due to the fact that Unbox uses a factory class to create the container, you cannot use array notation to set/configure services on the Container.
+This package contains an extended (final) Container and ContainerFactory from [Unbox][link-unbox]. Usage is almost exactly the same as using Unbox directly, except the extended Container _partially_ implements ArrayAccess. What this means is that you may use array notation to _access_ services in the Container; however, due to the fact that Unbox uses a factory class to create the container, you cannot use array notation to set/configure services on the Container.
 
-Also provided is a default service provider, registering all the same services required by Slim. All services are registered under their class name, with aliases by interface and Slim-specific short name (e.g. "router", "foundHandler"). The default services provider is _not_ automatically registered for you, so you need to do this yourself.
+Also provided is `DefaultServicesProvider`, registering all the same services required by Slim. All services are registered under their class name, with aliases by interface and Slim-specific short name (e.g. "router", "foundHandler"). The default services provider is _not_ automatically registered for you, so you need to do this yourself.
 
 The service provider accepts an array of settings that Slim uses to configure various services (see: [Slim Default Settings](//www.slimframework.com/docs/objects/application.html#slim-default-settings)). These are injected into a provided Settings class, so you may type hint against it in your classes for injection.
 
@@ -43,6 +43,8 @@ $app = new App($container);
 
 $app->run();
 ```
+
+Usage of the packaged `Container` and `ContainerFactory` is entirely optional; they are included purely for convenience and consistency with Slim's packaged `Container`. Simply swap out `Geekish\Slimbox\ContainerFactory` in the snippet above for `mindplay\unbox\ContainerFactory`.
 
 ## Change log
 

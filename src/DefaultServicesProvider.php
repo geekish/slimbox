@@ -2,9 +2,9 @@
 
 namespace Geekish\Slimbox;
 
-use mindplay\unbox\Container as UnboxContainer;
 use mindplay\unbox\ContainerFactory as UnboxFactory;
 use mindplay\unbox\ProviderInterface;
+use Interop\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\CallableResolver;
@@ -191,7 +191,7 @@ class DefaultServicesProvider implements ProviderInterface
 
         $factory->register(
             CallableResolver::class,
-            function (Container $container) {
+            function (ContainerInterface $container) {
                 return new CallableResolver($container);
             }
         );
