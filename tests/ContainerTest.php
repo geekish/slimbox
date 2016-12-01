@@ -76,6 +76,24 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test ArrayAccess offsetUnset on container throws exception
+     *
+     * @expectedException \BadMethodCallException
+     */
+    public function testCannotArrayAccessUnsetOnContainer()
+    {
+        unset($this->container['settings']);
+    }
+
+    /**
+     * Test that we can check container has via ArrayAccess
+     */
+    public function testOffestHasOnContainer()
+    {
+        $this->assertTrue(isset($this->container['settings']));
+    }
+
+    /**
      * Test container has request
      */
     public function testGetRequest()
