@@ -8,6 +8,7 @@
  */
 namespace Geekish\Slimbox;
 
+use Interop\Container\Exception\NotFoundException;
 use mindplay\unbox\ContainerFactory as UnboxFactory;
 
 /**
@@ -58,41 +59,41 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test `get()` throws error if item does not exist
-     *
-     * @expectedException \Interop\Container\Exception\NotFoundException
      */
     public function testGetWithValueNotFoundError()
     {
+        $this->expectException(NotFoundException::class);
+
         $this->container->get('foo');
     }
 
     /**
      * Test `set()` throws exception
-     *
-     * @expectedException \BadMethodCallException
      */
     public function testCannotArrayAccessSetOnContainer()
     {
+        $this->expectException(\BadMethodCallException::class);
+
         $this->container['foo'] = "bar";
     }
 
     /**
      * Test `set()` throws exception
-     *
-     * @expectedException \BadMethodCallException
      */
     public function testCannotSetOnContainer()
     {
+        $this->expectException(\BadMethodCallException::class);
+
         $this->container->set('foo', 'bar');
     }
 
     /**
      * Test ArrayAccess offsetUnset on container throws exception
-     *
-     * @expectedException \BadMethodCallException
      */
     public function testCannotArrayAccessUnsetOnContainer()
     {
+        $this->expectException(\BadMethodCallException::class);
+
         unset($this->container['settings']);
     }
 
