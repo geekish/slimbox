@@ -10,12 +10,13 @@ namespace Geekish\Slimbox;
 
 use Interop\Container\Exception\NotFoundException;
 use mindplay\unbox\ContainerFactory as UnboxFactory;
+use PHPUnit\Framework\TestCase;
 
 /**
  * ContainerTest
  * Blatantly copypasta'd from \Slim\Tests\ContainerTest
  */
-class ContainerTest extends \PHPUnit_Framework_TestCase
+class ContainerTest extends TestCase
 {
     /**
      * @var Container
