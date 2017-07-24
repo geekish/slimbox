@@ -8,9 +8,15 @@
  */
 namespace Geekish\Slimbox;
 
+use BadMethodCallException;
 use Interop\Container\Exception\NotFoundException;
+use mindplay\unbox\Container as UnboxContainer;
 use mindplay\unbox\ContainerFactory as UnboxFactory;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use Slim\Handlers;
+use Slim\Interfaces;
 
 /**
  * ContainerTest
@@ -39,7 +45,7 @@ class ContainerTest extends TestCase
         $unboxFactory->add(new DefaultServicesProvider);
         $container = $unboxFactory->createContainer();
 
-        $this->assertInstanceOf('\mindplay\unbox\Container', $container);
+        $this->assertInstanceOf(UnboxContainer::class, $container);
     }
 
     /**
@@ -47,7 +53,7 @@ class ContainerTest extends TestCase
      */
     public function testGet()
     {
-        $this->assertInstanceOf('\Slim\Interfaces\Http\EnvironmentInterface', $this->container->get('environment'));
+        $this->assertInstanceOf(Interfaces\Http\EnvironmentInterface::class, $this->container->get('environment'));
     }
 
     /**
@@ -55,7 +61,7 @@ class ContainerTest extends TestCase
      */
     public function testGetSettings()
     {
-        $this->assertInstanceOf('\Geekish\Slimbox\Settings', $this->container->get('settings'));
+        $this->assertInstanceOf(Settings::class, $this->container->get('settings'));
     }
 
     /**
@@ -73,7 +79,7 @@ class ContainerTest extends TestCase
      */
     public function testCannotArrayAccessSetOnContainer()
     {
-        $this->expectException(\BadMethodCallException::class);
+        $this->expectException(BadMethodCallException::class);
 
         $this->container['foo'] = 'bar';
     }
@@ -83,7 +89,7 @@ class ContainerTest extends TestCase
      */
     public function testCannotSetOnContainer()
     {
-        $this->expectException(\BadMethodCallException::class);
+        $this->expectException(BadMethodCallException::class);
 
         $this->container->set('foo', 'bar');
     }
@@ -93,7 +99,7 @@ class ContainerTest extends TestCase
      */
     public function testCannotArrayAccessUnsetOnContainer()
     {
-        $this->expectException(\BadMethodCallException::class);
+        $this->expectException(BadMethodCallException::class);
 
         unset($this->container['settings']);
     }
@@ -119,7 +125,7 @@ class ContainerTest extends TestCase
      */
     public function testGetResponse()
     {
-        $this->assertInstanceOf('\Psr\Http\Message\ResponseInterface', $this->container['response']);
+        $this->assertInstanceOf(ResponseInterface::class, $this->container['response']);
     }
 
     /**
@@ -127,7 +133,7 @@ class ContainerTest extends TestCase
      */
     public function testGetRouter()
     {
-        $this->assertInstanceOf('\Slim\Interfaces\RouterInterface', $this->container['router']);
+        $this->assertInstanceOf(Interfaces\RouterInterface::class, $this->container['router']);
     }
 
     /**
@@ -135,7 +141,7 @@ class ContainerTest extends TestCase
      */
     public function testGetFoundHandler()
     {
-        $this->assertInstanceOf('\Slim\Interfaces\InvocationStrategyInterface', $this->container['foundHandler']);
+        $this->assertInstanceOf(Interfaces\InvocationStrategyInterface::class, $this->container['foundHandler']);
     }
 
     /**
@@ -143,7 +149,7 @@ class ContainerTest extends TestCase
      */
     public function testGetErrorHandler()
     {
-        $this->assertInstanceOf('\Slim\Handlers\Error', $this->container['errorHandler']);
+        $this->assertInstanceOf(Handlers\Error::class, $this->container['errorHandler']);
     }
 
     /**
@@ -151,7 +157,7 @@ class ContainerTest extends TestCase
      */
     public function testGetPhpErrorHandler()
     {
-        $this->assertInstanceOf('\Slim\Handlers\PhpError', $this->container['phpErrorHandler']);
+        $this->assertInstanceOf(Handlers\PhpError::class, $this->container['phpErrorHandler']);
     }
 
     /**
@@ -159,7 +165,7 @@ class ContainerTest extends TestCase
      */
     public function testGetNotAllowedHandler()
     {
-        $this->assertInstanceOf('\Slim\Handlers\NotAllowed', $this->container['notAllowedHandler']);
+        $this->assertInstanceOf(Handlers\NotAllowed::class, $this->container['notAllowedHandler']);
     }
 
     /**
@@ -167,7 +173,7 @@ class ContainerTest extends TestCase
      */
     public function testGetCallableResolver()
     {
-        $this->assertInstanceOf('\Slim\Interfaces\CallableResolverInterface', $this->container['callableResolver']);
+        $this->assertInstanceOf(Interfaces\CallableResolverInterface::class, $this->container['callableResolver']);
     }
 
     /**
