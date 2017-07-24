@@ -72,7 +72,7 @@ class DefaultServicesProvider implements ProviderInterface
 
         $factory->alias(
             'environment',
-            Environment::class
+            EnvironmentInterface::class
         );
 
         $factory->register(
@@ -203,7 +203,7 @@ class DefaultServicesProvider implements ProviderInterface
 
         $factory->alias(
             'callableResolver',
-            CallableResolver::class
+            CallableResolverInterface::class
         );
     }
 }
