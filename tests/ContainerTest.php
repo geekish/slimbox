@@ -75,7 +75,7 @@ class ContainerTest extends TestCase
     {
         $this->expectException(\BadMethodCallException::class);
 
-        $this->container['foo'] = "bar";
+        $this->container['foo'] = 'bar';
     }
 
     /**

@@ -54,7 +54,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "settings",
+            'settings',
             Settings::class
         );
 
@@ -71,7 +71,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "environment",
+            'environment',
             Environment::class
         );
 
@@ -88,7 +88,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "request",
+            'request',
             Request::class
         );
 
@@ -108,7 +108,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "response",
+            'response',
             Response::class
         );
 
@@ -129,7 +129,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "router",
+            'router',
             Router::class
         );
 
@@ -143,7 +143,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "foundHandler",
+            'foundHandler',
             RequestResponse::class
         );
 
@@ -155,7 +155,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "phpErrorHandler",
+            'phpErrorHandler',
             PhpError::class
         );
 
@@ -167,7 +167,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "errorHandler",
+            'errorHandler',
             Error::class
         );
 
@@ -176,7 +176,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "notFoundHandler",
+            'notFoundHandler',
             NotFound::class
         );
 
@@ -185,7 +185,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "notAllowedHandler",
+            'notAllowedHandler',
             NotAllowed::class
         );
 
@@ -202,7 +202,7 @@ class DefaultServicesProvider implements ProviderInterface
         );
 
         $factory->alias(
-            "callableResolver",
+            'callableResolver',
             CallableResolver::class
         );
     }

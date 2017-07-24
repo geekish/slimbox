@@ -44,7 +44,7 @@ final class Container extends Unbox implements ArrayAccess
     public function offsetSet($key, $value)
     {
         throw new BadMethodCallException(sprintf(
-            "%s does not support ArrayAccess::offsetSet, you must use %s to configure and create the container",
+            '%s does not support ArrayAccess::offsetSet, you must use %s to configure and create the container',
             __CLASS__,
             ContainerFactory::class
         ));
@@ -56,7 +56,7 @@ final class Container extends Unbox implements ArrayAccess
     public function offsetUnset($key)
     {
         throw new BadMethodCallException(sprintf(
-            "%s does not support ArrayAccess::offsetUnset(), you must use %s to configure and create the container",
+            '%s does not support ArrayAccess::offsetUnset(), you must use %s to configure and create the container',
             __CLASS__,
             ContainerFactory::class
         ));
@@ -72,7 +72,7 @@ final class Container extends Unbox implements ArrayAccess
     public function set($key, $value)
     {
         throw new BadMethodCallException(sprintf(
-            "%s does not support set() method, you must use %s to configure and create the container",
+            '%s does not support set() method, you must use %s to configure and create the container',
             __CLASS__,
             ContainerFactory::class
         ));
